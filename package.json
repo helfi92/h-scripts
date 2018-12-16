@@ -1,0 +1,32 @@
+{
+  "name": "h-scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:helfi92/h-scripts.git",
+  "author": "Hassan Ali <helfi92@gmail.com>",
+  "scripts": {
+    "start": "webpack --mode development",
+    "lint": "eslint --cache --format codeframe --ext js src"
+  },
+  "engines": {
+    "node": ">= 10",
+    "npm": ">= 5"
+  },
+  "bin": "build/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cross-spawn": "^6.0.5",
+    "read-pkg-up": "^4.0.0",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb-base": "^9.0.0-rc.0",
+    "@neutrinojs/node": "^9.0.0-rc.0",
+    "eslint": "^5.10.0",
+    "kcd-scripts": "^0.49.0",
+    "neutrino": "^9.0.0-rc.0",
+    "shebang-loader": "^0.0.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
