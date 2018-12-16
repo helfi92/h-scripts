@@ -1,22 +1,12 @@
 const spawn = require('cross-spawn');
 const { pkg } = require('../utils');
 
-console.log('installing and running travis-deploy-once');
-const { status } = spawn.sync('npx', ['travis-deploy-once@5']);
-
-if (status === 0) {
-  runAfterSuccessScripts();
-} else {
-  process.exit(status);
-}
-
 function runAfterSuccessScripts() {
   const { TRAVIS_BRANCH, TRAVIS_PULL_REQUEST, TRAVIS } = process.env;
-  const autorelease =
-    pkg.version === '0.0.0-semantically-released' &&
-    Boolean(TRAVIS) &&
-    TRAVIS_PULL_REQUEST === false &&
-    TRAVIS_BRANCH === 'master';
+  const autorelease = pkg.version === '0.0.0-semantically-released'
+    && Boolean(TRAVIS)
+    && TRAVIS_PULL_REQUEST === false
+    && TRAVIS_BRANCH === 'master';
 
   if (!autorelease) {
     console.log('No need to autorelease. Skipping travis-after-success script...');
@@ -33,6 +23,15 @@ function runAfterSuccessScripts() {
 
     const result = spawn.sync('semantic-release', { stdio: 'inherit' });
 
-    process.exit(result.status)
+    process.exit(result.status);
   }
+}
+
+console.log('installing and running travis-deploy-once');
+const { status } = spawn.sync('npx', ['travis-deploy-once@5']);
+
+if (status === 0) {
+  runAfterSuccessScripts();
+} else {
+  process.exit(status);
 }

@@ -1,9 +1,11 @@
 module.exports = {
   use: [
     ['@neutrinojs/airbnb-base', {
-      rules: {
-        'no-console': 'off',
-      },
-    }]
+      eslint: {
+        rules: {
+          'no-console': 'off',
+        },
+      }
+    }],
   ]
 };
