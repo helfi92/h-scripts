@@ -1,6 +1,6 @@
 {
   "name": "h-scripts",
-  "version": "1.0.0",
+  "version": "0.0.13",
   "repository": "git@github.com:helfi92/h-scripts.git",
   "author": "Hassan Ali <helfi92@gmail.com>",
   "scripts": {
@@ -14,6 +14,9 @@
   "bin": "src/index.js",
   "license": "MIT",
   "dependencies": {
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
+    "conventional-changelog-eslint": "^3.0.1",
     "cross-spawn": "^6.0.5",
     "read-pkg-up": "^4.0.0",
     "yargs": "^12.0.5"
@@ -22,7 +25,6 @@
     "@neutrinojs/airbnb-base": "^9.0.0-rc.0",
     "@neutrinojs/node": "^9.0.0-rc.0",
     "eslint": "^5.10.0",
-    "kcd-scripts": "^0.49.0",
     "neutrino": "^9.0.0-rc.0",
     "shebang-loader": "^0.0.1",
     "verdaccio": "^3.10.0",
